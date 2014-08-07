@@ -10,6 +10,8 @@ CLASSPATH_RUNTIME="$CLASSPATH;$RUNTIMEFILE"
 
 done
 
-java -classpath $CLASSPATH_RUNTIME com.util.XuShuangShuangJunit com.xu
+java -classpath $CLASSPATH_RUNTIME com.util.XuShuangShuangJunit "$@"
+
+RETVAL=$?
 
 echo "RUN-TEST DONE"
