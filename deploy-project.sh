@@ -2,9 +2,14 @@
 
 echo "DEPLOY-PROJECT START"
 
-echo "PLEASE INPUT PROJECT NAME"
+read -p "PLEASE INPUT PROJECT NAME :" PROJECT_NAME
 
-PROJECT_NAME="$@"
+if[[ "$PRPJECT_NAME" = "" ]]; then
+
+    echo "NO PROJECT NAME"
+
+    exit
+fi
 
 mkdir -p $CATALINA_HOME/webapps/$PROJECT_NAME
 

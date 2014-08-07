@@ -10,7 +10,16 @@ CLASSPATH_RUNTIME="$CLASSPATH;$RUNTIMEFILE"
 
 done
 
-java -classpath $CLASSPATH_RUNTIME com.util.XuShuangShuangJunit "$@"
+read -p "PLEASE INPUT TEST CASE PACKAGE :" PACKAGE
+
+if[[ "$PACKAGE" = "" ]]; then
+
+    echo "PACKAGE IS NULL"
+
+    exit
+fi
+
+java -classpath $CLASSPATH_RUNTIME com.util.XuShuangShuangJunit $PACKAGE
 
 RETVAL=$?
 
