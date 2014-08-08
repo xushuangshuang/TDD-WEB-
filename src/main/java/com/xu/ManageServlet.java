@@ -13,10 +13,11 @@ public class ManageServlet extends HttpServlet
         throws IOException, ServletException
     {
         String URI = req.getRequestURI();
-        
         Pattern pattern = Pattern.compile("/");
         String[] resolveURI = pattern.split(URI);
-        resp.getWriter().println(resolveURI);
+        String classPart = resolveURI[2];
+        resolveURI[2]=resolveURI[2].substring(0,1).toUpperCase()+resolveURI[2].substring(1);
+        System.out.println(resolveURI[2]);
     }
 
 }
