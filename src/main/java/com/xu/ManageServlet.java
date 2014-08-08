@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 public class ManageServlet extends HttpServlet
 {
@@ -12,6 +13,10 @@ public class ManageServlet extends HttpServlet
         throws IOException, ServletException
     {
         String URI = req.getRequestURI();
-        resp.getWriter().println(URI);
+        
+        Pattern pattern = Pattern.compile("/");
+        String[] resolveURI = pattern.split(URI);
+        resp.getWriter().println(resolveURI);
     }
+
 }
