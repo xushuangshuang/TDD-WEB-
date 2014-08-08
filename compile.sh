@@ -30,8 +30,8 @@ CLASSPATH_RUNTIME="$CLASSPATH_RUNTIME;$RUNTIMEFILE"
 
 done
 
-echo $CLASSPATH_TEST
+find src/main/java/com/xu/ -maxdepth 1 -type f | xargs javac -d target/classes/ -classpath "$CLASSPATH_WEB"
 
-find src/test/java/com/util/ -maxdepth 1 -type f | xargs javac -d target/classes -classpath "$CLASSPATH_TEST"
+find src/test/java/com/util/ -maxdepth 1 -type f | xargs javac -d target/test-classes -classpath "$CLASSPATH_TEST"
 
 echo "COMPILE DONE"
